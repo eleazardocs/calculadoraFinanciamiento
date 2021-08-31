@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: #3b883a;
+            color: whitesmoke;
+        }
+        #box {
+            border-radius: 50px;
+            background: #3b883a;
+            box-shadow:  20px 20px 60px #327431,
+             -20px -20px 60px #449c43;
+             width: 15%;
+             padding: 5%;
+             margin: 10%;
+             margin-left: 35%;
+             margin-top: 5%;
+        }
+        #box-header {
+        padding-left: 10%;
+        }
+        h2 {
+            padding-left: 25%;
+        }
+        #container {
+            padding-left: 5%;
+        }
+        button {
+            background-color: blue;
+            color: whitesmoke;
+            padding-top: 3%;
+            margin-top: 5%;
+            margin-left: 25%;
+        }
+        #result {
+            margin-top: 5%;
+            margin-left: 10%;
+        }
+        .fondo {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id='box-header'>
+            <div><h1>CALCULADORA DE FINANCIAMIENTO INVERSIONES MAURI.SRL</h1></div>
+            <div><h2>Wireless Unlimited  Altice Dominicana</h2></div>
+        </div>
+        <hr>
+        <div id='box'>
+            <form id='container'>
+                <div>Precio neto del equipo:<br/><br/><input type='text' class='fondo' id='precio_equipo' placeholder='precio neto del equipo'></div>
+                <br/>
+                <div>Pago inicial de Trivision:<br/><br/><input class='fondo' id='pago_inicial' placeholder='pago inicial' type='text'></div>
+                <div><button type='button' id='verificar' onclick='operacion()'>Resultado</button></div>
+                <div id='result'></div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // DAR LA BIENVENIDA
+        alert("Bienvenido a la Calculadora de Financiamientos");
+        
+        // OPERACION MATEMATICA
+        const operacion = function operacion(){ 
+            let precioEquipo = document.getElementById('precio_equipo').value;
+            let pagoInicial = document.getElementById('pago_inicial').value;
+            let result = document.getElementById('result');
+
+            const solucion = ( precioEquipo - pagoInicial ) / 1.18;
+            const solucion2 = solucion.toFixed(2);
+            result.innerText=solucion2;
+        }
+        operacion();
+    </script>
+</body>
+</html>
